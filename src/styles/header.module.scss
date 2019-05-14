@@ -1,0 +1,16 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.5s ease-in;
+  z-index: 10;
+}
+
+.title {
+  margin: 0;
+}
+
+.container {
+  composes: container from './container.module.scss';
+}
