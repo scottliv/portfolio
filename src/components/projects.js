@@ -1,5 +1,6 @@
 import React from 'react';
 import Project from './Project';
+import projectStyle from "../styles/projects.module.scss";
 
 const projects = [
   {
@@ -35,7 +36,7 @@ const projects = [
 
 const Projects = props => {
   return (
-    <section className="projects">
+    <section className={projectStyle.projects} id="projects" title="Projects">
         {projects.map((project, i) => {
           return <Project key={i} project={project} />;
         })}

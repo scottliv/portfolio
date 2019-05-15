@@ -35,7 +35,6 @@ const Banner = ({ bannerTitle, tagLine }) => (
                        <p>
                          {tagLine}
                        </p>
-                       <SocialLinks/>
                      </div>
                    </BackgroundImage>
                  )
@@ -44,18 +43,6 @@ const Banner = ({ bannerTitle, tagLine }) => (
 
   />
 
-
-  // <section className={bannerStyle.banner}>
-  //   <div>
-  //     <h1 className={bannerStyle.bannerTitle}>
-  //         {bannerTitle}
-  //     </h1>
-  //     <p>
-  //       {tagLine}
-  //     </p>
-  //     <SocialLinks/>
-  //   </div>
-  // </section>
 )
 
 Banner.propTypes = {
