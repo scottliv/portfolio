@@ -57,16 +57,11 @@
   opacity: 0.5!important;
 }
 
-@media screen and (max-width: 1200px) {
-  .project {
-    margin: 0 -1rem;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .project {
     max-width: 100%;
     flex-basis: 100%;
     min-width: 100vw;
+    margin: 0 -1rem;
   }
 }
