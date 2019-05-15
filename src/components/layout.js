@@ -10,8 +10,11 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./normailize.css"
+import "./normailize.css";
+import "../styles/typography.scss";
+import Container from './container'
 import layoutStyle from "../styles/layout.module.scss"
+import footerStyle from "../styles/footer.module.scss"
 
 const handleScroll = () => {
   console.log("hi");
@@ -35,8 +38,10 @@ const Layout = ({ children }) => (
           className={layoutStyle.layout}
         >
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}
+          <footer className={footerStyle.footer}>
+            <Container>
+              © {new Date().getFullYear()}
+            </Container>
           </footer>
         </div>
       </>

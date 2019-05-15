@@ -1,25 +1,25 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Link, animateScroll as scroll } from "react-scroll"
 import headerStyle from "../styles/header.module.scss"
+import SocialLinks from "./socialLinks"
 
 class Header extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super(props)
+    this.state = {}
 
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   handleScroll() {
-    this.setState({ scroll: window.scrollY });
-    const el = document.querySelector("header");
+    this.setState({ scroll: window.scrollY })
+    const el = document.querySelector("header")
     if (this.state.scroll > 0) {
 
-      el.style.backgroundColor = "black";
-    }
-    else {
-      el.style.backgroundColor = "transparent";
+      el.style.backgroundColor = "#232323"
+    } else {
+      el.style.backgroundColor = "transparent"
     }
 
   }
@@ -30,18 +30,39 @@ class Header extends React.Component {
 
 
   render() {
-    const {siteTitle} = this.props;
+    const { siteTitle } = this.props
     return (
       <header className={headerStyle.header}>
         <div className={headerStyle.container}>
-          <h1 className={headerStyle.title}>
-            <a href="mailto:scottlivingstone@gmail.com">
+          <div className={headerStyle.flexContainer}>
+            <h1 className={headerStyle.title}>
               {siteTitle}
-            </a>
-          </h1>
+            </h1>
+            <SocialLinks/>
+          </div>
+          <nav>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-95}
+              duration={500}
+              className={headerStyle.link}
+            >About</Link>
+            <Link
+              activeClass="active"
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-95}
+              duration={500}
+              className={headerStyle.link}
+            >Projects</Link>
+          </nav>
         </div>
       </header>
-    );
+    )
   }
 }
 

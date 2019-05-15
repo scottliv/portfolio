@@ -1,0 +1,5 @@
+.footer {
+  composes: layout from './layout.module.scss';
+  background-color: #232323;
+  color: white;
+}
