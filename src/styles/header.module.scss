@@ -21,6 +21,7 @@
 
   nav {
     display: flex;
+    flex-wrap: wrap;
   }
 
   :global .active {
@@ -67,4 +68,19 @@
 
 .flexContainer {
   display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .header {
+    nav {
+      display: none;
+    }
+  }
 }
