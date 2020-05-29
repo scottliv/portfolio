@@ -10,14 +10,14 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./normailize.css";
-import "../styles/typography.scss";
-import Container from './container'
+import "./normailize.css"
+import "../styles/typography.scss"
+import Container from "./container"
 import layoutStyle from "../styles/layout.module.scss"
 import footerStyle from "../styles/footer.module.scss"
 
 const handleScroll = () => {
-  console.log("hi");
+  console.log("hi")
 }
 
 const Layout = ({ children }) => (
@@ -33,15 +33,14 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} handleScroll={handleScroll}/>
-        <div
-          className={layoutStyle.layout}
-        >
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          handleScroll={handleScroll}
+        />
+        <div className={layoutStyle.layout}>
           <main>{children}</main>
           <footer className={footerStyle.footer}>
-            <Container>
-              © {new Date().getFullYear()}
-            </Container>
+            <Container>© {new Date().getFullYear()}</Container>
           </footer>
         </div>
       </>
