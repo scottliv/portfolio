@@ -6,9 +6,8 @@ import BackgroundImage from "gatsby-background-image"
 import bannerStyle from "../styles/banner.module.scss"
 
 const Banner = ({ bannerTitle, tagLine }) => (
-
-
-  <StaticQuery query={graphql`
+  <StaticQuery
+    query={graphql`
       query {
         desktop: file(relativePath: { eq: "banner-background.jpg" }) {
           childImageSharp {
@@ -19,30 +18,24 @@ const Banner = ({ bannerTitle, tagLine }) => (
         }
       }
     `}
-               render={data => {
-                 // Set ImageData.
-                 const imageData = data.desktop.childImageSharp.fluid
-                 return (
-                   <BackgroundImage Tag="section"
-                                    className={bannerStyle.banner}
-                                    fluid={imageData}
-                                    backgroundColor={`#040e18`}
-                   >
-                     <div>
-                       <h1 className={bannerStyle.title}>
-                         {bannerTitle}
-                       </h1>
-                       <p>
-                         {tagLine}
-                       </p>
-                     </div>
-                   </BackgroundImage>
-                 )
-               }
-               }
-
+    render={data => {
+      // Set ImageData.
+      const imageData = data.desktop.childImageSharp.fluid
+      return (
+        <BackgroundImage
+          Tag="section"
+          className={bannerStyle.banner}
+          fluid={imageData}
+          backgroundColor={`#040e18`}
+        >
+          <div>
+            <h1 className={bannerStyle.title}>{bannerTitle}</h1>
+            <p>{tagLine}</p>
+          </div>
+        </BackgroundImage>
+      )
+    }}
   />
-
 )
 
 Banner.propTypes = {
