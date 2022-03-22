@@ -15,12 +15,12 @@ const IndexPage = () => (
       <Content />
       <Projects />
       <Image />
-      <div class="eLIB--grid__singleOption">
+      <div class="eLIB--row__singleOption">
         <link rel="stylesheet" href="https://linkin.bio/css/gallery.min.css" />
         <iframe
           src="https://staging.linkin.bio/scottlivingstone34"
           width="100%"
-          height="1165px"
+          height="640px"
           frameborder="0"
         ></iframe>
       </div>
